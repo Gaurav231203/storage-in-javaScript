@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Preference</title>
+   <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+:root{
+
+    --bg-light:linear-gradient(135deg,#6a11cb,#2575fc);
+    --text-light:#ffffff;
+    --card-light:rgba(255,255,255,.15);
+    --border-light:rgba(255,255,255,.25);
+
+    --bg-dark:linear-gradient(135deg,#0f172a,#020617);
+    --text-dark:#ffffff;
+    --card-dark:rgba(255,255,255,.08);
+    --border-dark:rgba(255,255,255,.1);
+
+}
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.4s;
+
+}
+
+/* ---------- LIGHT ---------- */
+
+body.light{
+
+    background:var(--bg-light);
+    color:var(--text-light);
+
+}
+
+body.light .container{
+
+    background:var(--card-light);
+    border:1px solid var(--border-light);
+
+}
+
+body.light .toggle{
+
+    background:#ffffff;
+
+}
+
+body.light .circle{
+
+    left:3px;
+    background:#6a11cb;
+
+}
+
+/* ---------- DARK ---------- */
+
+body.dark{
+
+    background:var(--bg-dark);
+    color:var(--text-dark);
+
+}
+
+body.dark .container{
+
+    background:var(--card-dark);
+    border:1px solid var(--border-dark);
+
+}
+
+body.dark .toggle{
+
+    background:#2b2b2b;
+
+}
+
+body.dark .circle{
+
+    left:43px;
+    background:#ffd54f;
+
+}
+
+/* ---------- CARD ---------- */
+
+.container{
+
+    width:360px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+h1{
+
+    margin-bottom:30px;
+
+}
+
+#mode{
+
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+
+}
+
+/* ---------- TOGGLE ---------- */
+
+.toggle{
+
+    width:80px;
+    height:40px;
+
+    border-radius:50px;
+
+    margin:auto;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.circle{
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:3px;
+
+    transition:.4s;
+
+}
+   </style>
+</head>
+<body class="light">
+
+    <div class="container">
+
+        <h1>Theme Preference</h1>
+
+        <div class="toggle">
+            <div class="circle"></div>
+        </div>
+
+        <p id="mode">Light Mode</p>
+
+    </div>
+
+    <script src="theme-preference-localstorage.js"></script>
+
+</body>
+</html>
